@@ -1,0 +1,52 @@
+{
+  "name": "@vegardit/har-extract",
+  "version": "1.0.0",
+  "description": "util to extract http archives (`.har`) to filesystem",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "coverage": "nyc npm test && nyc report --reporter=html",
+    "format": "prettier-eslint --write \"src/**/*.js\" \"test/**/*.js\"",
+    "lint": "eslint src",
+    "test": "ava --verbose",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vegardit/node-har-extract.git"
+  },
+  "keywords": [
+    "har",
+    "extract",
+    "http-archive"
+  ],
+  "author": "Benjamin Kroeger <bk@vegardit.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vegardit/node-har-extract/issues"
+  },
+  "homepage": "https://github.com/vegardit/node-har-extract#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "eslint": "^5.6.1",
+    "eslint-config-oniyi": "^6.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nyc": "^13.0.1",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.test.js",
+      "test/**",
+      "node_modules/**"
+    ]
+  },
+  "dependencies": {
+    "har-validator": "^5.1.0",
+    "lodash": "^4.17.11",
+    "make-dir": "^1.3.0",
+    "roarr": "^2.11.2"
+  }
+}
