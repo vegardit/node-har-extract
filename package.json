@@ -34,13 +34,15 @@
     "eslint-config-oniyi": "^6.0.0",
     "eslint-plugin-import": "^2.14.0",
     "nyc": "^13.0.1",
-    "prettier-eslint-cli": "^4.7.1"
+    "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.6.2"
   },
   "nyc": {
+    "include": [
+      "lib/**.js"
+    ],
     "exclude": [
-      "**/*.test.js",
-      "test/**",
-      "node_modules/**"
+      "**/*.test.js"
     ]
   },
   "dependencies": {
