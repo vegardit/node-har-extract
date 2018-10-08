@@ -18,8 +18,9 @@ extract({ outputDir: 'tmp', inputFile: 'my-test-file.har' }).then((result) => {
 
 - `outputDir` (optional), default: `output` absolute or relative path to write extracted content to. Any provided path is run through [make-dir](https://www.npmjs.com/package/make-dir) to ensure it's existence. Relative paths are coerced through `path.resolve(outputDir)`, which will resolve an absolute path from `process.cwd()`.
 
-- `inputFile` (required): absolute or relative path to http archive file. File content is loaded and validated through [har-validator](https://www.npmjs.com/package/har-validator) to ensure compliance with [HAR 1.2 spec](https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md). Also, `inputFile` must not be nested within `outputDir`.
+- `inputFile` (required): absolute or relative path to http archive file. File content is loaded and (if `validateInput` is truthy) validated through [har-validator](https://www.npmjs.com/package/har-validator) to ensure compliance with [HAR 1.2 spec](https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md). Also, `inputFile` must not be nested within `outputDir`.
 
+- `validateInput` (optional), default: `false` turn on / off validation of `inputFile` content through [har-validator](https://www.npmjs.com/package/har-validator). (this currently leads to validation errors when `ipv6` addresses are listed in `entries[].serverIPAddress`, hence the default is `false`)
 
 ## License
 
