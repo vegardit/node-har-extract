@@ -23,7 +23,7 @@
     "http-archive"
   ],
   "author": "Benjamin Kroeger <bk@vegardit.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/vegardit/node-har-extract/issues"
   },

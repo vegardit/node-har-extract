@@ -24,4 +24,4 @@ extract({ outputDir: 'tmp', inputFile: 'my-test-file.har' }).then((result) => {
 
 ## License
 
-Copyright © 2018, [Vegard IT GmbH](https://vegardit.com/). Released under the [MIT license](https://github.com/vegardit/node-har-extract/blob/master/LICENSE).
+All files are released under the [Apache License 2.0](https://github.com/vegardit/node-har-extract/blob/master/LICENSE).
