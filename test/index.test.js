@@ -3,7 +3,6 @@ import path from 'path';
 
 // 3rd party modules
 import test from 'ava';
-import makeDir from 'make-dir';
 import rimraf from 'rimraf';
 
 // internal modules
@@ -31,7 +30,7 @@ test('inputFile located inside outputDir', (t) => {
   });
 });
 
-test('use default outputDir', t => harExtract({ inputFile: 'test/fixtures/sample-har.json' }).then(({ outputDir }) => {
+test('use default outputDir', t => harExtract({ inputFile: 'test/fixtures/sample.har' }).then(({ outputDir }) => {
   t.is(outputDir, path.resolve('output'));
 
   return promisedRimraf(outputDir);
@@ -39,21 +38,17 @@ test('use default outputDir', t => harExtract({ inputFile: 'test/fixtures/sample
 
 test('extract har file', (t) => {
   const tmpDir = uuid();
-  return makeDir(tmpDir).then((outputDir) => {
-    const extractionPromise = harExtract({ outputDir, inputFile: 'connect.bosch.com.json' });
-    t.notThrows(extractionPromise);
 
-    return extractionPromise.then(
-      () => new Promise((resolve, reject) => {
-        rimraf(outputDir, (rimrafError) => {
-          if (rimrafError) {
-            reject(rimrafError);
-            return;
-          }
+  const extractionPromise = harExtract({
+    outputDir: tmpDir,
+    inputFile: 'test/fixtures/sample.har',
+  });
 
-          resolve();
-        });
-      })
-    );
+  t.notThrows(extractionPromise);
+
+  return extractionPromise.then(({ outputDir }) => {
+    t.is(outputDir, path.resolve(tmpDir));
+
+    return promisedRimraf(outputDir);
   });
 });
