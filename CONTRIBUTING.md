@@ -1,6 +1,6 @@
-# Contributing to node-express-har-middleware
+# Contributing to node-har-extract
 
-Thanks for contributing to node-express-har-middleware!
+Thanks for contributing to node-har-extract!
 
 ## License
 
