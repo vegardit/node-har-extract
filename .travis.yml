@@ -1,0 +1,4 @@
+language: nodejs
+cache:
+  directories:
+    - "node_modules"
