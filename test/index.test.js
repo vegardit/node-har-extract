@@ -44,7 +44,7 @@ test('extract har file', (t) => {
     inputFile: 'test/fixtures/sample.har',
   });
 
-  t.notThrows(extractionPromise);
+  t.notThrowsAsync(extractionPromise);
 
   return extractionPromise.then(({ outputDir }) => {
     t.is(outputDir, path.resolve(tmpDir));
