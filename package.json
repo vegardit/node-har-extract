@@ -1,6 +1,6 @@
 {
   "name": "@vegardit/har-extract",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "extract http archives (HAR 1.2) to filesystem",
   "main": "lib/index.js",
   "files": [
