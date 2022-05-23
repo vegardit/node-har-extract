@@ -30,7 +30,7 @@
   "homepage": "https://github.com/vegardit/node-har-extract#readme",
   "devDependencies": {
     "ava": "^2.2.0",
-    "eslint": "^7.9.0",
+    "eslint": "^8.16.0",
     "eslint-config-oniyi": "^6.0.1",
     "eslint-plugin-import": "^2.22.0",
     "nyc": "^15.1.0",
