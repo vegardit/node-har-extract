@@ -35,7 +35,7 @@
     "eslint-plugin-import": "^2.22.0",
     "nyc": "^15.1.0",
     "prettier-eslint-cli": "^5.0.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^4.1.2"
   },
   "nyc": {
     "include": [
